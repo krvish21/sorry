@@ -19,7 +19,8 @@
         .panel {
             overflow: hidden;
             height: 70vh;
-            width: 80vw;
+            width: 90vw; /* Adjusted width for smaller screens */
+            max-width: 600px; /* Limit maximum width */
             border: 4px solid #e3a52d;
             border-radius: .25rem;
             background-color: #f8f9fa;
@@ -42,7 +43,7 @@
             flex: 0 0 20%;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: center; /* Centered button on smaller screens */
         }
 
         .appear-from-left {
@@ -110,6 +111,25 @@
             padding: 0;
             width: 100%;
             box-sizing: border-box;
+            font-size: 1.5rem; /* Adjusted font size */
+        }
+
+        button {
+            font-size: 1rem; /* Adjusted font size */
+        }
+
+        @media (max-width: 576px) {
+            .panel {
+                height: 80vh; /* Adjust height on very small screens */
+            }
+            
+            h1 {
+                font-size: 1.2rem; /* Adjust font size for smaller screens */
+            }
+
+            button {
+                font-size: 0.9rem; /* Adjust button font size */
+            }
         }
     </style>
 </head>
@@ -117,7 +137,7 @@
     <div class="panel bg-warning-subtle">
         <div class="top bg-white p-2 border border-1 border-warning-subtle">
             <div id="typewriter" class="appear-from-left"> <!-- Default class -->
-                <h1 id="content">🙏 A letter to my Sabaa. ❤️</h1>
+                <h1 id="content">🙏 To Sabaa. ❤️</h1>
             </div>
         </div>
         <div class="bottom bg-white p-2">
@@ -148,7 +168,7 @@ And maybe that was selfish of me.`,
 I left you alone while you stayed up all night, crying.`,
             `Whatever may be the reason to this, I am aware I did it and I will not give any excuse for it.
 What I would do, however, is relentlessly beg for a chance at redemption.`,
-            `Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. `,
+            `Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. `,
             `I fell asleep baby 😭
 How dare I, right? 😭😭😭`,
             `I am sorry 😭😭😭`,
@@ -180,7 +200,6 @@ So I will end it here.`,
             "You're Awesome! 🎈",
             "I really do"
         ];
-
 
         const directions = ['appear-from-left', 'appear-from-right', 'appear-from-top', 'appear-from-bottom'];
 
