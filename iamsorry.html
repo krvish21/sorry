@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .panel {
+            overflow: hidden;
+            height: 70vh;
+            width: 80vw;
+            border: 4px solid #e3a52d;
+            border-radius: .25rem;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        .top {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bottom {
+            flex: 0 0 20%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .appear-from-left {
+            animation: slide-in-left 2s ease-out;
+        }
+
+        .appear-from-right {
+            animation: slide-in-right 2s ease-out;
+        }
+
+        .appear-from-top {
+            animation: slide-in-top 2s ease-out;
+        }
+
+        .appear-from-bottom {
+            animation: slide-in-bottom 2s ease-out;
+        }
+
+        @keyframes slide-in-left {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in-right {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in-top {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in-bottom {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <div class="top bg-white p-2 border border-1 border-warning-subtle">
+            <div id="typewriter" class="appear-from-left"> <!-- Default class -->
+                <h1 id="content">🙏 A letter to my Sabaa. ❤️</h1>
+            </div>
+        </div>
+        <div class="bottom bg-white p-2">
+            <button id="nextButton" type="button" class="btn bg-warning-subtle btn-sm border-4 border-warning-subtle rounded-3">Start</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        let typewriterDiv = document.getElementById('typewriter');
+        const nextButton = document.getElementById('nextButton');
+        const contentDiv = document.getElementById('content');
+
+        const msgsArray = [
+            "Hi baby, I know that I haven't been easy to be with recently.",
+            "Wait scratch that...",
+            "I have been a HORRIBLE PERSON lately. And an EVEN HORRIBLE pati.",
+            "I keep making you cry, despite repeatedly telling you that I never would. I keep saying mean things to you, and realise it the moment later.",
+            `I know I haven't been doing a lot of things that I had promised I'd do
+and keep doing things that I promised I never would.`,
+            `And amidst all this, there you are, bearing it all. My little bacchu, whom I've sworn to protect and keep happy.`,
+            "And I am not saying all this just because you are mad at me now. Baby, I really never intend to hurt you but I keep doing it somehow. All the time and not to self victimize but it hurts me too. Really badly. But that's beside the point.",
+            `I know I broke your heart and that's the worst possible thing someone can do to someone that they claim to love.
+Maybe I overestimated myself a little too much. Perhaps, I should have listened to you when you said "Zyada hero banne ki koshish mat karo".`,
+            `I always believed that I could love like my heart has never been broken. like, I have never felt pain and when I met you... I could feel it inside me that you were just so easy to fall in love with. Every. Single. Day. I fell in love with you. Every. Single. Day. And my pains kept getting washed away. Every. Single. Day. 
+And maybe that was selfish of me.`,
+            `1st August 2024.
+I left you alone while you stayed up all night, crying.`,
+            `Whatever may be the reason to this, I am aware I did this and I will not give any excuse for it.
+What I would do, however, is relentlessly beg for a chance at redemption.`,
+            `Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. Please. `,
+            `I fell asleep baby 😭
+How dare I, right? 😭😭😭`,
+            `I am sorry 😭😭😭`,
+            `Jaana you know I love you. I don't know how I will ever make up for how much I made you cry. But if you let me love you some more, I might just learn to love you better.`,
+            `Please maaf kardo na and let me fix things between us. Please.
+I want to make this time cute and better but I do not want you to feel like I am gone again. 
+So I will end it here.`,
+            `Please forgive me. Dobara nahi hogi ye galti. ❤️❤️`,
+            "I love you, Manasvika 💖"
+        ];
+
+        const buttonText = [
+            "Next",
+            "Next",
+            "Click karo",
+            "One more click?",
+            "Hehe clicky click",
+            "I am sorry! 😔",
+            "Keep Going! 😃",
+            "Oops, Another One? 😅",
+            "Ready for More? 🤩",
+            "You're Doing Great! 👍",
+            "Tap Me Again! 😜",
+            "Feeling Lucky? 🍀",
+            "Click Me for Joy! 🌟",
+            "I'm Not Done Yet! ⏳",
+            "Let's Go Again! 🚀",
+            "One More Time! 💫",
+            "You're Awesome! 🎈",
+            "Hit Me Up! 👋",
+            "More! 😭",
+            "I love you 💖"
+        ];
+
+
+        const directions = ['appear-from-left', 'appear-from-right', 'appear-from-top', 'appear-from-bottom'];
+
+        let counter = 0;
+
+        nextButton.addEventListener('click', (e) => {
+            // Remove all direction classes
+            directions.forEach(direction => typewriterDiv.classList.remove(direction));
+            
+            // Add a random direction class
+            const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+            typewriterDiv.classList.add(randomDirection);
+
+            // Reset the animation
+            void typewriterDiv.offsetWidth;  // Trigger a reflow to reset the animation
+
+            if (counter >= msgsArray.length) {
+                counter = 0; // Reset the counter if it exceeds the length of the array
+            }
+            contentDiv.innerHTML = msgsArray[counter];
+            nextButton.innerHTML = buttonText[counter];
+            ++counter;
+        });
+    </script>
+</body>
+</html>
